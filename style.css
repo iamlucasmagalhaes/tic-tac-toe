@@ -30,31 +30,12 @@ table{
     height: 12rem;
     background-color: #fff;
     border-radius: .5rem;
+    text-align: center;
+    font-size: 3rem;
+    color: #56baed;
+    font-weight: bolder;
 }
 
-.play-board{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    max-width: 33rem;
-}
-
-.play-board, .details{
-    background-color: #fff;
-    padding: .7rem;
-    border-radius: .5rem;
-}
-
-.play-board section{
-    display: flex;
-}
-
-.play-board section span{
-    display: block;
-    margin: .3rem;
-    height: 8rem;
-    width: 8rem;
-    background: #fff;
+.field:hover{
+    cursor: pointer;
 }
