@@ -18,22 +18,69 @@ body{
     font-size: 1.6rem;
 }
 
-table{
+main{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+.play-board .details{
+    background: #fff;
+    padding: .7rem;
+    border-radius: .5rem;
+}
+
+.play-board .details .player{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.play-board .details span{
+    width: 100%;
+    border-radius: .5rem;
+    padding: .7rem 0;
+    font-size: 1.9rem;
+    font-weight: 500;
+    cursor: default;
+    text-align: center;
+}
+
+.details span.active{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.play-board section{
+    display: flex;
+}
+
+.play-board section span{
+    display: block;
+    margin: .2rem;
+    height: 8rem;
+    width: 8rem;
+    background: #fff;
+    border-radius: .5rem;
+}
+
+table{
+    
+    border-spacing: .5rem;
+}
+
 .field{
+    margin: .2rem;
     width: 12rem;
     height: 12rem;
     background-color: #fff;
     border-radius: .5rem;
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
     color: #56baed;
     font-weight: bolder;
+    line-height: 8rem;
 }
 
 .field:hover{
