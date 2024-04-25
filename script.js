@@ -5,6 +5,7 @@ const height = 3
 function start(){
     createBoardGameDataStructure()
     renderBoardGame()
+    reload()
 }
 
 //cria a estrutura do meu tabuleiro
@@ -72,9 +73,14 @@ function checkWinner(){
             boardGame[i][0] === boardGame[i][1] &&
             boardGame[i][0] === boardGame[i][2]
         ){
-            //alert('Jogador ' + (boardGame[i][0] === 1 ? 'X' : 'O') + ' ganhou')
             const rowCells = document.querySelectorAll(`td[data-row="${i}"]`)
             rowCells.forEach(cell => cell.classList.add('winner'))
+            const modal = document.querySelector('.modal')
+            modal.innerText = `O jogador ${(boardGame[i][0] === 1) ? 'X' : 'O'} ganhou`
+            modal.classList.remove('hidden')
+            setTimeout(function (){
+                location.reload()
+            }, 2000)
             return
         }
     }    
@@ -86,9 +92,14 @@ function checkWinner(){
             boardGame[0][j] === boardGame[1][j] &&
             boardGame[0][j] === boardGame[2][j]
         ){
-            //alert('Jogador ' + (boardGame[0][j] === 1 ? 'X' : 'O') + ' ganhou')
             const colCells = document.querySelectorAll(`td[data-col="${j}"]`)
             colCells.forEach(cell => cell.classList.add('winner'))
+            const modal = document.querySelector('.modal')
+            modal.innerText = `O jogador ${(boardGame[0][j] === 1) ? 'X' : 'O'} ganhou`
+            modal.classList.remove('hidden')
+            setTimeout(function (){
+                location.reload()
+            }, 2000)
             return
         }
     }
@@ -99,8 +110,14 @@ function checkWinner(){
         boardGame[0][0] === boardGame[1][1] &&
         boardGame[0][0] === boardGame[2][2]
     ) {
-        const diagonalCells = document.querySelectorAll('td[data-row][data-col][data-row="0"][data-col="0"], td[data-row][data-col][data-row="1"][data-col="1"], td[data-row][data-col][data-row="2"][data-col="2"]');
+        const diagonalCells = document.querySelectorAll('td[data-row][data-col][data-row="0"][data-col="0"], td[data-row][data-col][data-row="1"][data-col="1"], td[data-row][data-col][data-row="2"][data-col="2"]')
         diagonalCells.forEach(cell => cell.classList.add('winner'))
+        const modal = document.querySelector('.modal')
+        modal.innerText = `O jogador ${(boardGame[0][0] === 1) ? 'X' : 'O'} ganhou`
+        modal.classList.remove('hidden')
+        setTimeout(function (){
+            location.reload()
+        }, 2000)
         return
     }
 
@@ -112,9 +129,14 @@ function checkWinner(){
     ) {
         const diagonalCells = document.querySelectorAll('td[data-row][data-col][data-row="0"][data-col="2"], td[data-row][data-col][data-row="1"][data-col="1"], td[data-row][data-col][data-row="2"][data-col="0"]')
         diagonalCells.forEach(cell => cell.classList.add('winner'))
+        const modal = document.querySelector('.modal')
+        modal.innerText = `O jogador ${(boardGame[0][2] === 1) ? 'X' : 'O'} ganhou`
+        modal.classList.remove('hidden')
+        setTimeout(function (){
+            location.reload()
+        }, 2000)
         return
     }
-
 
     if(checkDraw()){
         alert('O jogo terminou em empate!')
@@ -131,6 +153,13 @@ function checkDraw(){
         }
     }
     return true
+}
+
+//recarrega a página
+function reload(){
+    document.querySelector('button').addEventListener('click', function (){
+        location.reload()
+    })
 }
 
 start()
