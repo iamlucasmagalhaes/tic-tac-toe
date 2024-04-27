@@ -74,7 +74,9 @@ function checkWinner(){
             boardGame[i][0] === boardGame[i][2]
         ){
             const rowCells = document.querySelectorAll(`td[data-row="${i}"]`)
-            rowCells.forEach(cell => cell.classList.add('winner'))
+            rowCells.forEach(function (cell){
+                cell.classList.add('winner')
+            })
             const modal = document.querySelector('.modal')
             modal.innerText = `O jogador ${(boardGame[i][0] === 1) ? 'X' : 'O'} ganhou`
             modal.classList.remove('hidden')
@@ -93,7 +95,9 @@ function checkWinner(){
             boardGame[0][j] === boardGame[2][j]
         ){
             const colCells = document.querySelectorAll(`td[data-col="${j}"]`)
-            colCells.forEach(cell => cell.classList.add('winner'))
+            colCells.forEach(function (cell){
+                cell.classList.add('winner')
+            })
             const modal = document.querySelector('.modal')
             modal.innerText = `O jogador ${(boardGame[0][j] === 1) ? 'X' : 'O'} ganhou`
             modal.classList.remove('hidden')
@@ -111,7 +115,9 @@ function checkWinner(){
         boardGame[0][0] === boardGame[2][2]
     ) {
         const diagonalCells = document.querySelectorAll('td[data-row][data-col][data-row="0"][data-col="0"], td[data-row][data-col][data-row="1"][data-col="1"], td[data-row][data-col][data-row="2"][data-col="2"]')
-        diagonalCells.forEach(cell => cell.classList.add('winner'))
+        diagonalCells.forEach(function (cell){
+            cell.classList.add('winner')
+        })
         const modal = document.querySelector('.modal')
         modal.innerText = `O jogador ${(boardGame[0][0] === 1) ? 'X' : 'O'} ganhou`
         modal.classList.remove('hidden')
@@ -128,7 +134,9 @@ function checkWinner(){
         boardGame[0][2] === boardGame[2][0]
     ) {
         const diagonalCells = document.querySelectorAll('td[data-row][data-col][data-row="0"][data-col="2"], td[data-row][data-col][data-row="1"][data-col="1"], td[data-row][data-col][data-row="2"][data-col="0"]')
-        diagonalCells.forEach(cell => cell.classList.add('winner'))
+        diagonalCells.forEach(function (cell){
+            cell.classList.add('winner')
+        })
         const modal = document.querySelector('.modal')
         modal.innerText = `O jogador ${(boardGame[0][2] === 1) ? 'X' : 'O'} ganhou`
         modal.classList.remove('hidden')
