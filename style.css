@@ -49,11 +49,14 @@ main{
     font-weight: 500;
     cursor: default;
     text-align: center;
+    color: var(--bg-color);
+    font-weight: bold;
 }
 
 .details span.active{
     background: var(--bg-color);
     color: var(--text-color);
+    transition: all 0.3s ease-in-out;
 }
 
 .play-board section{
