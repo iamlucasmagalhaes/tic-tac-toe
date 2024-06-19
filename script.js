@@ -73,19 +73,18 @@ function checkWinner(){
             boardGame[i][0] === boardGame[i][1] &&
             boardGame[i][0] === boardGame[i][2]
         ){
-            const rowCells = document.querySelectorAll(`td[data-row="${i}"]`)
-            rowCells.forEach(function (cell){
-                cell.classList.add('winner')
-            })
             const modal = document.querySelector('.modal')
+            const main = document.querySelector('main')
             modal.innerText = `O jogador ${(boardGame[i][0] === 1) ? 'X' : 'O'} ganhou`
             modal.classList.remove('hidden')
+            modal.classList.add('transitionIn')
+            main.classList.add('hidden')
             setTimeout(function (){
                 location.reload()
             }, 2000)
             return
         }
-    }    
+    }
 
     //verifica a coluna que ganhou
     for(let j = 0; j < height; j++){
@@ -94,13 +93,12 @@ function checkWinner(){
             boardGame[0][j] === boardGame[1][j] &&
             boardGame[0][j] === boardGame[2][j]
         ){
-            const colCells = document.querySelectorAll(`td[data-col="${j}"]`)
-            colCells.forEach(function (cell){
-                cell.classList.add('winner')
-            })
             const modal = document.querySelector('.modal')
+            const main = document.querySelector('main')
             modal.innerText = `O jogador ${(boardGame[0][j] === 1) ? 'X' : 'O'} ganhou`
             modal.classList.remove('hidden')
+            modal.classList.add('transitionIn')
+            main.classList.add('hidden')
             setTimeout(function (){
                 location.reload()
             }, 2000)
@@ -114,13 +112,12 @@ function checkWinner(){
         boardGame[0][0] === boardGame[1][1] &&
         boardGame[0][0] === boardGame[2][2]
     ) {
-        const diagonalCells = document.querySelectorAll('td[data-row][data-col][data-row="0"][data-col="0"], td[data-row][data-col][data-row="1"][data-col="1"], td[data-row][data-col][data-row="2"][data-col="2"]')
-        diagonalCells.forEach(function (cell){
-            cell.classList.add('winner')
-        })
         const modal = document.querySelector('.modal')
+        const main = document.querySelector('main')
         modal.innerText = `O jogador ${(boardGame[0][0] === 1) ? 'X' : 'O'} ganhou`
         modal.classList.remove('hidden')
+        modal.classList.add('transitionIn')
+        main.classList.add('hidden')
         setTimeout(function (){
             location.reload()
         }, 2000)
@@ -133,13 +130,12 @@ function checkWinner(){
         boardGame[0][2] === boardGame[1][1] &&
         boardGame[0][2] === boardGame[2][0]
     ) {
-        const diagonalCells = document.querySelectorAll('td[data-row][data-col][data-row="0"][data-col="2"], td[data-row][data-col][data-row="1"][data-col="1"], td[data-row][data-col][data-row="2"][data-col="0"]')
-        diagonalCells.forEach(function (cell){
-            cell.classList.add('winner')
-        })
         const modal = document.querySelector('.modal')
+        const main = document.querySelector('main')
         modal.innerText = `O jogador ${(boardGame[0][2] === 1) ? 'X' : 'O'} ganhou`
         modal.classList.remove('hidden')
+        modal.classList.add('transitionIn')
+        main.classList.add('hidden')
         setTimeout(function (){
             location.reload()
         }, 2000)

@@ -42,6 +42,11 @@ main{
     transform: translate(-50%, -50%);
 }
 
+.play-board{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-bottom: 2rem;
+}
+
 .play-board .details{
     background: #fff;
     padding: .7rem;
@@ -100,18 +105,14 @@ td {
     color: #56baed;
     font-weight: bolder;
     line-height: 8rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 td:hover{
     cursor: pointer;
 }
 
-.winner{
-    background-color: var(--winner);
-    color: green;
-}
-
-button{
+main button{
     position: absolute;
     top: 110%; 
     left: 50%;
@@ -135,11 +136,19 @@ button:hover{
     background-color: var(--text-color);
     border-radius: .5rem;
     z-index: 9999;
-    padding: .7rem;
+    max-width: 35rem;
+    padding: 2rem;
+    width: 100%;
     text-align: center;
-    font-size: 7rem;
+    font-size: 2.5rem;
+    font-weight: 500;
 }
 
 .hidden{
     display: none;
+    animation: transitionIn 1s;
+}
+
+.transitionIn{
+    animation: transitionIn 1s;
 }
