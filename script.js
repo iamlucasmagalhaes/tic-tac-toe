@@ -70,7 +70,10 @@ function handleClick(){
             table.classList.add('cross-turn')
             slider.style.transform = 'translateX(0%)' //move o slider para a esquerda
         }
-        checkWinner()
+
+        setTimeout(function (){
+            checkWinner()
+        }, 2000)
     }
 }
 
