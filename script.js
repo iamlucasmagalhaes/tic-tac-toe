@@ -44,22 +44,31 @@ function handleClick(){
     const table = document.querySelector('table')
     const row = Number(this.dataset.row) //obtem a linha clicada
     const col = Number(this.dataset.col) //obtem a coluna clicada
+    const slider = document.querySelector('.slider')
+
     //verifica se o valor dentro do campo clicado é vazio
     if(boardGame[row][col] === ''){
         const crossPlayer = document.querySelector('.Xturn')
         const circlePlayer = document.querySelector('.Oturn')
-        if(table.dataset.player === 'cross'){
+
+        if(table.dataset.player === 'cross-turn'){
             boardGame[row][col] = 1 //altera o valor
             this.innerText = 'X' //muda o texto dentro da campo clicado
             crossPlayer.classList.remove('active')
             circlePlayer.classList.add('active')
-            table.dataset.player = 'circle' //muda o valor da tabela
-        } else if(table.dataset.player === 'circle'){
+            table.dataset.player = 'circle-turn' //muda o valor da tabela
+            table.classList.remove('cross-turn')
+            table.classList.add('circle-turn')
+            slider.style.transform = 'translateX(100%)' //move o slide para a direita
+        } else if(table.dataset.player === 'circle-turn'){
             boardGame[row][col] = 0 //altera o valor
             this.innerText = 'O' //muda o texto dentro da campo clicado
             crossPlayer.classList.add('active')
             circlePlayer.classList.remove('active')
-            table.dataset.player = 'cross' //muda o valor da tabela
+            table.dataset.player = 'cross-turn' //muda o valor da tabela
+            table.classList.remove('circle-turn')
+            table.classList.add('cross-turn')
+            slider.style.transform = 'translateX(0%)' //move o slider para a esquerda
         }
         checkWinner()
     }

@@ -39,12 +39,13 @@ main{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.9);
 }
 
 .play-board{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     margin-bottom: 2rem;
+    transition: all 0.3s ease;
 }
 
 .play-board .details{
@@ -56,6 +57,7 @@ main{
 .play-board .details .player{
     display: flex;
     width: 100%;
+    position: relative;
     justify-content: space-around;
 }
 
@@ -69,6 +71,8 @@ main{
     text-align: center;
     color: var(--bg-color);
     font-weight: bold;
+    position: relative;
+    z-index: 5;
 }
 
 .details span.active{
@@ -76,6 +80,38 @@ main{
     color: var(--text-color);
     transition: all 0.3s ease-in-out;
 }
+
+.details .slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background: var(--bg-color);
+    border-radius: .5rem;
+    z-index: 1;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background: var(--bg-color);
+    border-radius: .5rem;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.circle-turn .slider {
+    transform: translateX(100%);
+}
+
+.cross-turn .slider {
+    transform: translateX(0%);
+}
+
 
 .play-board section{
     display: flex;
@@ -92,6 +128,7 @@ main{
 
 table {
     border-spacing: .5rem;
+    transition: all 0.3s ease;
 }
 
 td {
@@ -142,6 +179,7 @@ button:hover{
     text-align: center;
     font-size: 2.5rem;
     font-weight: 500;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .hidden{
