@@ -73,7 +73,7 @@ function handleClick(){
 
         setTimeout(function (){
             checkWinner()
-        }, 2000)
+        }, 1500)
     }
 }
 
