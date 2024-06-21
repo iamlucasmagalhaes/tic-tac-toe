@@ -1,3 +1,9 @@
+<p align="center">
+   <a href="https://iamlucasmagalhaes.github.io/guessing-game/">
+    <img src="images/2085020.png">
+   </a>
+</p>
+
 ## about
 This project is a tic-tac-toe game implemented in HTML, CSS and JavaScript. Here are some notes about the project and how the game works.
 
