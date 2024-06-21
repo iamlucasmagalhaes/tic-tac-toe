@@ -155,7 +155,15 @@ function checkWinner(){
     }
 
     if(checkDraw()){
-        alert('O jogo terminou em empate!')
+        const modal = document.querySelector('.modal')
+        const main = document.querySelector('main')
+        modal.innerText = `O jogo terminou em empate`
+        modal.classList.remove('hidden')
+        modal.classList.add('transitionIn')
+        main.classList.add('hidden')
+        setTimeout(function (){
+            location.reload()
+        }, 2000)
     }
 }
 
