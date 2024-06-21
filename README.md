@@ -1,5 +1,5 @@
 <p align="center">
-   <a href="https://iamlucasmagalhaes.github.io/guessing-game/">
+   <a href="https://iamlucasmagalhaes.github.io/tic-tac-toe/">
     <img src="images/2085020.png">
    </a>
 </p>
