@@ -190,3 +190,41 @@ button:hover{
 .transitionIn{
     animation: transitionIn 1s;
 }
+
+/* Estilos para telas menores */
+@media screen and (max-width: 768px) {
+    main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    button{
+        display: none;
+    }
+
+    .play-board{
+        width: 257px;
+    }
+    
+    .play-board section span {
+        height: 6rem;
+        width: 6rem;
+    }
+    
+    table {
+        font-size: 1rem;
+    }
+    
+    td{
+        height: 80px;
+        width: 80px;
+    }
+
+    main button {
+        font-size: 1.6rem; /* Reduz o tamanho do texto do botão Refresh */
+        width: 8rem; /* Ajusta a largura do botão Refresh */
+        height: 3rem;
+    }
+}
